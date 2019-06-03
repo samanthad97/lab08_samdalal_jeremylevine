@@ -43,7 +43,19 @@ bool isAnagram(string s1, string s2){
  *You should provide a recursive solution*/
 bool isPalindrome(const string s1){
 
-  return true;
+  //base case empty string or 1 letter 
+  int stringLength = strlen(s1);
+  if(stringLength == 0 || stringLength == 1){
+    return true;
+  }
+  //recursive case check if first and last letter are the same using .begin() and .end()
+  if(s1[0] != s1[strlen(s1)-1]){
+    return false;
+  }
+  else{
+    const string s = s1.substr(1,strlen(s1)-2);
+    return isPalindrome(s);
+  }
 }
 
 
