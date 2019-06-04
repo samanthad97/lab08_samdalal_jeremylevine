@@ -50,16 +50,16 @@ bool isPalindrome(const string s1){
   }
 
   //base case empty string or 1 letter 
-  int stringLength = s1.length();
+  int stringLength = temp.length();
   if(stringLength == 0 || stringLength == 1){
     return true;
   }
   //recursive case check if first and last letter are the same using .begin() and .end()
-  if(s1[0] != s1[s1.length()-1]){
+  if(temp[0] != temp[temp.length()-1]){
     return false;
   }
   else{
-    const string s = s1.substr(1,s1.length()-2);
+    const string s = temp.substr(1,temp.length()-2);
     return isPalindrome(s);
   }
 }
