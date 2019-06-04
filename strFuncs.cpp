@@ -21,11 +21,11 @@ bool isAnagram(string s1, string s2){
     count2[i] = 0;
   }
 
-  for(int i = 0; i < strlen(s1); i++){
+  for(int i = 0; i < s1.length(); i++){
     count1[tolower(string1[i])-0]++;
   }
 
-  for(int i = 0; i < strlen(s2); i++){
+  for(int i = 0; i < s2.length(); i++){
     count2[tolower(string2[i])-0]++;
   }
 
@@ -44,16 +44,16 @@ bool isAnagram(string s1, string s2){
 bool isPalindrome(const string s1){
 
   //base case empty string or 1 letter 
-  int stringLength = strlen(s1);
+  int stringLength = s1.length();
   if(stringLength == 0 || stringLength == 1){
     return true;
   }
   //recursive case check if first and last letter are the same using .begin() and .end()
-  if(s1[0] != s1[strlen(s1)-1]){
+  if(s1[0] != s1[s1.length()-1]){
     return false;
   }
   else{
-    const string s = s1.substr(1,strlen(s1)-2);
+    const string s = s1.substr(1,s1.length()-2);
     return isPalindrome(s);
   }
 }
