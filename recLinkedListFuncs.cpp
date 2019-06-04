@@ -21,7 +21,7 @@ int recursiveSum(Node* head) {
 int recursiveLargestValue(Node* head) {
   //list has at least 1 element
   assert(head != NULL);
-  int current_max = head->data
+  int current_max = head->data;
   int next_val;
    //base case, list size 1
   if(head->next == NULL){

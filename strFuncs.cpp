@@ -3,6 +3,7 @@
 #include <cstring>
 #include <cassert>
 #include <algorithm>
+#include <cctype>
 #include "strFuncs.h"
 using namespace std;
 
@@ -22,11 +23,11 @@ bool isAnagram(string s1, string s2){
   }
 
   for(int i = 0; i < s1.length(); i++){
-    count1[tolower(string1[i])-0]++;
+    count1[tolower(s1[i])-0]++;
   }
 
   for(int i = 0; i < s2.length(); i++){
-    count2[tolower(string2[i])-0]++;
+    count2[tolower(s2[i])-0]++;
   }
 
   for(int i = 97; i < 123; i++){
@@ -42,6 +43,11 @@ bool isAnagram(string s1, string s2){
  * Postcondition: Returns true if s1 is a palindrome, false otherwise
  *You should provide a recursive solution*/
 bool isPalindrome(const string s1){
+
+  string temp = s1;
+  for(int i = 0; i < temp.length(); i++){
+    temp[i] = tolower(temp[i]);
+  }
 
   //base case empty string or 1 letter 
   int stringLength = s1.length();
